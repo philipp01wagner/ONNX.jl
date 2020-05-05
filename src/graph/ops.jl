@@ -436,6 +436,10 @@ ops[:Reciprocal] = function(params, A)
   vcall(:./ , 1, A)
 end
 
+ops[:ReduceMean] = function(params, A)
+  vcall(:broadcast, :mean, A)
+end
+
 ops[:Xor] = function (params, A, B)
   ip1 = vcall(:broadcast, &, vcall(:Array, vcall(:broadcast, Bool, A)), vcall(:Array, 
               vcall(:broadcast, !, vcall(:broadcast, Bool, B))))
