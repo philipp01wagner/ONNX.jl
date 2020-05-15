@@ -520,4 +520,8 @@ ops[:Squeeze] = function(params, A)
   vcall(:broadcast, :mean, A)
 end
 
+ops[:Slice] = function(params, A)
+  vcall(:broadcast, :mean, A)
+end
+
 
