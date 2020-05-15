@@ -436,8 +436,8 @@ ops[:Reciprocal] = function(params, A)
   vcall(:./ , 1, A)
 end
 
-ops[:ReduceMean] = function(params, A)
-  vcall(:broadcast, :mean, A)
+ops[:Squeeze] = function(params, A)
+  vcall(:broadcast, :squeeze)
 end
 
 ops[:Xor] = function (params, A, B)
@@ -510,3 +510,14 @@ end
 ops[:Atan] = function(params, A)
   vcall(:broadcast, :atan, A)
 end
+
+#### new methods
+ops[:ReduceMean] = function(params, A)
+  vcall(:broadcast, :mean, A)
+end
+
+ops[:Squeeze] = function(params, A)
+  vcall(:broadcast, :mean, A)
+end
+
+
